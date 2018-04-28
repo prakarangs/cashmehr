@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from './assets/logo.svg';
 import './style/App.css';
+
+import Home from './Home';
+import Inventory from './Inventory';
+import Casher from './Casher';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <React.Fragment>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/inventory">Inventory</Link>
+            </li>
+            <li>
+              <Link to="/casher">Casher</Link>
+            </li>
+          </ul>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/inventory" component={Inventory}/>
+          <Route exact path="/casher" component={Casher}/>
+        </React.Fragment>
+      </Router>
     );
   }
 }
