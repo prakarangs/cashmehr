@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
-class Home extends Component {
+class Item extends Component {
 	render () {
 		return (
-			<div>Home page</div>
+			<div>Item page</div>
 		);
 	}
 }
 
-export default Home;
+export default Item;
